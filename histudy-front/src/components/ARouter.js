@@ -15,7 +15,6 @@ import ManageReport from "../pages/Manager/ManageReport";
 import ReportDetail from "../pages/Manager/ReportDetail";
 import CreateGroup from "../pages/Manager/CreateGroup";
 import MainTest from "./Main/MainTest";
-import Profile from "../pages/Profile/Profile";
 
 export default function ARouter() {
   return (
@@ -39,7 +38,6 @@ export default function ARouter() {
         <Route path="/manageReport" element={<ManageReport />}></Route>
         <Route path="/reportDetail" element={<ReportDetail />}></Route>
         <Route path="/test" element={<MainTest />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

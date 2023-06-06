@@ -7,7 +7,6 @@ import {
 } from "firebase/storage";
 import { getValue } from "@testing-library/user-event/dist/utils";
 import { storage } from "../../Firebase/firebase";
-
 import {
   Box,
   Button,
@@ -18,12 +17,9 @@ import {
 } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
-import { importCourses } from "../../apis/course";
-import Heic2Jpg from "./Heic2Jpg";
 import compressedFile from "./compressFile";
-
+import { importCourses } from "../../apis/course";
 // import CompressedFile from "./compressFile";
-// import convert from "heic-convert";
 
 // interface IProps {
 //   imageURLList: string[] | [];
@@ -45,12 +41,10 @@ export function ImageUpload({ setValue, getValues }) {
     const file = e.target.files;
     if (!file) return null;
 
-    const convertedFile = await Heic2Jpg(file[0]);
-
-    const lowCapacityFile = await compressedFile(convertedFile);
+    const selectedFile = await compressedFile(file[0]);
 
     const storageRef = ref(storage, `files/${file[0].name}`);
-    const uploadTask = uploadBytesResumable(storageRef, lowCapacityFile);
+    const uploadTask = uploadBytesResumable(storageRef, selectedFile);
 
     uploadTask.on(
       "state_changed",
@@ -97,8 +91,7 @@ export function ImageUpload({ setValue, getValues }) {
       <input
         hidden
         type="file"
-        // accept="image/*"
-        accept=".jpg,.jpeg,.png,.gif,.bmp,.heic,.heif"
+        accept="image/*"
         ref={inputRef}
         onChange={onImageChange}
       />

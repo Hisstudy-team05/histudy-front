@@ -1,13 +1,13 @@
 import { Box, Typography } from "@mui/material";
 
-export default function ProgressBar({ page, setPage }) {
+export default function ProgressBar({ page }) {
   return (
     <Box
       sx={{
         //   border: 1,
         mt: "80px",
-        mb: "45px",
-        minWidth: "290px",
+        mb: "65px",
+        minWidth: "300px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -20,20 +20,19 @@ export default function ProgressBar({ page, setPage }) {
               key={index}
               sx={{
                 display: "flex",
-                fontWeight: "500",
+                fontWeight: "bold",
                 justifyContent: "center",
                 alignItems: "center",
                 fontSize: "25px",
                 width: "35px",
                 height: "35px",
-                borderRadius: "5px",
+                borderRadius: "8px",
                 paddingTop: "3px",
                 border: 2,
                 borderColor: "primary.main",
                 backgroundColor: pageNavNum <= page ? "primary.main" : "white",
                 color: pageNavNum <= page ? "white" : "primary.main",
               }}
-              onClick={() => setPage(pageNavNum)}
             >
               {pageNavNum}
             </Box>
@@ -41,7 +40,7 @@ export default function ProgressBar({ page, setPage }) {
               <Box
                 sx={{
                   width: "65px",
-                  height: "3px",
+                  height: "4px",
                   backgroundColor: "lightGray",
                 }}
               ></Box>

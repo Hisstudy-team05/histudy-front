@@ -4,7 +4,6 @@ import LongButton from "../../components/LongButton";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getMyTeamReport, getmyTeamReport } from "../../apis/report";
-import NoDataLottie from "../../components/NoDataLottie";
 
 const data = [
   ["1", "보고서 제목 1", "글쓴이 1", "2023-05-13"],
@@ -92,14 +91,6 @@ export default function Report() {
           longWidthColumnNum={-1}
           type="report"
         />
-        {reports.length === 0 && (
-          // <Typography variant="h6" sx={{ textAlign: "center", mt: "50px" }}>
-          //   ⚠️ 제출한 보고서가 없습니다.
-          // </Typography>
-          <Box sx={{ mt: 5 }}>
-            <NoDataLottie />
-          </Box>
-        )}
       </Box>
     </Box>
   );

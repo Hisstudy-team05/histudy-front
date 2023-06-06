@@ -92,7 +92,7 @@ export function CodeModal({ onClick }) {
             // sx={{ borderRadius: "30px" }}
             alt="histudy_logo"
           />
-          <Typography variant="h3" sx={{ mt: 5 }}>
+          <Typography variant="h4" sx={{ mt: 5 }}>
             {nowTime}
           </Typography>
         </Box>
